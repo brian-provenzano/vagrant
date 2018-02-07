@@ -1,0 +1,6 @@
+#!/bin/bash
+# BJP - due to ubuntu driver signing; run this after "1-sign-vbox-modules" - done after any kernel changes or bvox updates
+modprobe vboxdrv
+modprobe vboxnetadp
+modprobe vboxnetflt
+echo "COMPLETE: modprobe run on all vbox modules..."

@@ -1,0 +1,15 @@
+---
+
+# web
+- hosts: web
+  become: yes
+
+  roles:
+    - web
+
+# lb
+- hosts: loadbalance
+  become: yes  
+
+  roles:
+    - lb

@@ -1,0 +1,34 @@
+---
+# This sets up the entire tiered site (lb, common, web servers, etc)
+# We end up with functioning 6 node web servers fronted by load balancer/haproxy
+# 5/10/17 BJP - added ci server (jenkins) to the mix
+
+
+# common
+- hosts: all
+  become: yes
+  gather_facts: no
+
+  roles:
+    - common
+
+# web
+- hosts: web
+  become: yes
+
+  roles:
+    - web
+
+# lb
+- hosts: lb
+  become: yes  
+
+  roles:
+    - lb
+
+# ciserver
+- hosts: ciserver
+  become: yes
+
+  roles:
+    - ciserver

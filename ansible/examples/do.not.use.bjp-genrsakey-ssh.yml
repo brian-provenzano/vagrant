@@ -1,0 +1,8 @@
+# BJP not needed any longer - now part of the mgmt bootstrap
+---
+- hosts: localhost
+  gather_facts: no
+  become: no
+  tasks:
+  - name: generate ssh keys for est trust for ansible
+    local_action: shell yes "" | ssh-keygen -t rsa -N "" -b 2048

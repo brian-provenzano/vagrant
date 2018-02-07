@@ -1,0 +1,14 @@
+---
+- name: install git
+  apt: name=git state=installed update_cache=yes
+
+- name: install ntp
+  apt: name={{item}} state=installed update_cache=yes
+  with_items:
+    - ntp
+    - ntpdate
+- name: deploy ntp config
+  copy: src=ntp.conf.j2 dest=/etc/ntp.conf mode=644 owner=root group=root
+  notify: 
+    - restart ntp
+    - force ntp update

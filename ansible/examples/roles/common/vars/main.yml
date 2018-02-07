@@ -1,0 +1,4 @@
+---
+- vars:
+  primary_ntpserver: 0.north-america.pool.ntp.org
+  secondary_ntpserver: 1.north-america.pool.ntp.org
