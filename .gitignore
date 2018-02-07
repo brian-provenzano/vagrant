@@ -1,0 +1,21 @@
+vscode 
+############
+.vscode
+.vscode/
+
+# keys - just in case #
+#######################
+*.pem
+
+# vagrant #
+#####################
+.vagrant
+
+####MISC#####
+
+#ignore log files
+*.log
+
+###
+*.asc
+
